@@ -2,24 +2,26 @@
   <section class="restaurantinfo">
     <div v-for="store in datasource" :key="store.id">
       <h2>{{ store.name }}</h2>
-      <p>Delievery Time{{ store.deliveryTime }}</p>
+      <p>Delivery Time {{ store.deliveryTime }}</p>
       <p>Rating {{ store.rating }}</p>
-      <p v-if="store.freeDelievery" class="label">
-        <span>Free Delievery</span>
+      <p v-if="store.freeDelivery" class="label">
+        <span>Free Delivery</span>
       </p>
       <div class="row">
         <div
           v-for="menuitem in store.menu"
           :key="menuitem.id"
+          :style="`background: url(/${menuitem.img}) no-repeat center center`"
           class="items"
-          :style="`background: url(${menuitem.img}) no-repeat center center`"
         >
           <div class="iteminfo">
             <div>
               <h4>{{ menuitem.item }}</h4>
               <p>{{ priceFormatting(menuitem.price) }}</p>
             </div>
-            <button class="ghost">View Item</button>
+            <nuxt-link :to="`item/${menuitem.id}`">
+              <button class="ghost">View Item ></button>
+            </nuxt-link>
           </div>
         </div>
       </div>
