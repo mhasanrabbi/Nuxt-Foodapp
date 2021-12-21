@@ -5,14 +5,12 @@
         <nuxt-link exact to="/">Home</nuxt-link>
       </li>
       <li>
-        <nuxt-link to="/about">About</nuxt-link>
+        <nuxt-link to="/restaurants">Restaurants</nuxt-link>
       </li>
     </ul>
   </nav>
 </template>
 
-<script>
-export default {};
-</script>
+<script></script>
 
 <style lang="scss" scoped></style>
